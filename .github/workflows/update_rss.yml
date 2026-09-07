@@ -29,9 +29,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Ajalootund Scraper
-      run: python scrape_ajalootund.py
-
     - name: Run Kuuldemang Scraper
       run: python scrape_kuuldemang.py
 
@@ -41,7 +38,7 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
         # Lisame muudetud failid otseselt
-        git add feed.xml feed_kuuldemang.xml episodes_cache.json kuuldemang_cache.json
+        git add feed_kuuldemang.xml kuuldemang_cache.json
         
         # Kontrollime, kas on midagi committida
         if git diff --cached --quiet; then
